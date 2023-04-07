@@ -1,23 +1,29 @@
 package com.tricentis.automobiles.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.tricentis.automobiles.objectrepository.ObjectRepository;
 import com.tricentis.base.Base;
 
 public class HomePagePOM extends Base{
 
-	@FindBy(xpath = "//ul[@class='menu']//child::li[1]//a[text()='Automobile']")
+	@FindBy(xpath =ObjectRepository.automobileLnk)
+	@CacheLookup
 	WebElement automobileLnk;
 
-	@FindBy(xpath = "//a[text()='Truck']")
+	@FindBy(xpath =ObjectRepository.truckLnk)
+	@CacheLookup
 	WebElement truckLnk;
 
-	@FindBy(xpath = "//a[contains(text(),'Motorcycle')]")
+	@FindBy(xpath =ObjectRepository.motorcycleLnk)
+	@CacheLookup
 	WebElement motorcycleLnk;
 
-	@FindBy(xpath = "//ul[@class='menu']//following::li[4]//a[text()='Camper']")
+	@FindBy(xpath =ObjectRepository.camperLnk)
+	@CacheLookup
 	WebElement camperLnk;
 	
 	public HomePagePOM() {
@@ -44,9 +50,9 @@ public class HomePagePOM extends Base{
 		return camperLnk.getText();
 	}
 	
-	public AutomobilePage clickOnAutomobile() {
+	public void clickOnAutomobile() {
 		automobileLnk.click();
-		return new AutomobilePage();
+		
 	}
 	
 	

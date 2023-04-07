@@ -1,4 +1,4 @@
-package com.tricentis.utils;
+package com.tricentis.utilities;
 
 
 import java.io.FileInputStream;

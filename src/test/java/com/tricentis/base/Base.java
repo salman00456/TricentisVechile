@@ -39,7 +39,7 @@ public class Base {
 	public Base() {
 
 		// load locator.properties file
-		try {
+		/*try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
 					"C:\\Users\\salma\\eclipse-workspace\\TricentisVechiles\\src\\test\\java\\com\\tricentis\\config\\locator.properties");
@@ -50,6 +50,8 @@ public class Base {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		*/
+
 
 		// load config.properties file
 		try {

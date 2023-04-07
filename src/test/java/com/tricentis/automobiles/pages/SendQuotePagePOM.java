@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,118 +16,159 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.tricentis.automobiles.objectrepository.ObjectRepository;
 import com.tricentis.base.Base;
 
 public class SendQuotePagePOM extends Base{
 
-	@FindBy(xpath = "//ul[@class='menu']//child::li[1]//a[text()='Automobile']")
+	@FindBy(xpath =ObjectRepository.automobileLnk )
+	@CacheLookup
 	WebElement automobileLnk;
 
-	@FindBy(xpath = "//a[text()='Truck']")
+	@FindBy(xpath =ObjectRepository.truckLnk)
+	@CacheLookup
 	WebElement truckLnk;
 
-	@FindBy(xpath = "//a[contains(text(),'Motorcycle')]")
+	@FindBy(xpath =ObjectRepository.motorcycleLnk)
+	@CacheLookup
 	WebElement motorcycleLnk;
 
-	@FindBy(xpath = "//ul[@class='menu']//following::li[4]//a[text()='Camper']")
+	@FindBy(xpath =ObjectRepository.camperLnk )
+	@CacheLookup
 	WebElement camperLnk;
 	
-	@FindBy(xpath = "//*[@class='idealsteps-step']//select[@id='make']")
+	@FindBy(xpath =ObjectRepository.selectMake)
+	@CacheLookup
 	WebElement selectMake;
 	
-	@FindBy(xpath = "//input[@id='engineperformance']")
+	@FindBy(xpath =ObjectRepository.enginePerfmnceTxt)
+	@CacheLookup
 	WebElement enginePerfmnceTxt;
 	
-	@FindBy(xpath = "//input[@id='dateofmanufacture']")
+	@FindBy(xpath =ObjectRepository.manufactureTxt)
+	@CacheLookup
 	WebElement manufactureTxt;
 	
-	@FindBy(xpath = "//label[text()='Number of Seats']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectNumSeat)
+	@CacheLookup
 	WebElement selectNumSeat;
 	
-	@FindBy(xpath = "//label[text()='Fuel Type']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectFuel)
+	@CacheLookup
 	WebElement selectFuel;
 	
-	@FindBy(xpath = "//label[text()='List Price [$]']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.priceTxt)
+	@CacheLookup
 	WebElement priceTxt;
 	
-	@FindBy(xpath = "//label[text()='License Plate Number']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.licenseTxt)
+	@CacheLookup
 	WebElement licenseTxt;
 	
-	@FindBy(xpath = "//label[text()='Annual Mileage [mi]']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.mileageTxt)
+	@CacheLookup
 	WebElement mileageTxt;
 	
-	@FindBy(xpath = "//button[starts-with(@id,'nextenterinsurantdata')]")
+	@FindBy(xpath =ObjectRepository.vehcileNxtBtn)
+	@CacheLookup
 	WebElement vehcileNxtBtn;
 	
-	@FindBy(xpath = "//input[starts-with(@id,'firstname')]")
+	@FindBy(xpath =ObjectRepository.fnameTxt)
+	@CacheLookup
 	WebElement fnameTxt;
 	
-	@FindBy(xpath = "//input[starts-with(@id,'lastname')]")
+	@FindBy(xpath =ObjectRepository.lnameTxt)
+	@CacheLookup
 	WebElement lnameTxt;
 	
-	@FindBy(xpath = "//input[starts-with(@name,'Date of Birth')]")
+	@FindBy(xpath =ObjectRepository.dobTxt)
+	@CacheLookup
 	WebElement dobTxt;
 	
-	@FindBy(xpath = "//*[@id=\\\"insurance-form\\\"]/div/section[2]/div[4]/p/label[1]/span")
+	@FindBy(xpath =ObjectRepository.selectGender)
+	@CacheLookup
 	WebElement selectGender;
 	
-	@FindBy(xpath = "//input[starts-with(@id,'streetaddress')]")
+	@FindBy(xpath =ObjectRepository.stAddressTxt)
+	@CacheLookup
 	WebElement stAddressTxt;
 	
-	@FindBy(xpath = "//select[starts-with(@id,'country')]")
+	@FindBy(xpath =ObjectRepository.selectCountry)
+	@CacheLookup
 	WebElement selectCountry;
 	
-	@FindBy(xpath = "//input[@id='zipcode']")
+	@FindBy(xpath =ObjectRepository.zipcodeTxt)
+	@CacheLookup
 	WebElement zipcodeTxt;
 	
-	@FindBy(xpath = "//*[contains(@id,'city')]")
+	@FindBy(xpath =ObjectRepository.cityNameTxt)
+	@CacheLookup
 	WebElement cityNameTxt;
 	
-	@FindBy(xpath = "//select[@id='occupation']")
+	@FindBy(xpath =ObjectRepository.selectOccupation)
+	@CacheLookup
 	WebElement selectOccupation;
 	
-	@FindBy(xpath = "//*[@id='speeding']")
+	@FindBy(xpath =ObjectRepository.selectHobby)
+	@CacheLookup
 	WebElement selectHobby;
 	
-	@FindBy(xpath = "//input[@id='website']")
+	@FindBy(xpath =ObjectRepository.websiteTxt)
+	@CacheLookup
 	WebElement websiteTxt;
 	
-	@FindBy(xpath = "//button[starts-with(@id,'nextenterproductdata')]")
+	@FindBy(xpath =ObjectRepository.insurantNxtBtn)
+	@CacheLookup
 	WebElement insurantNxtBtn;
 	
-	@FindBy(xpath = "//*[text()='Start Date']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.startDateTxt )
+	@CacheLookup
 	WebElement startDateTxt;
 	
-	@FindBy(xpath = "//*[text()='Insurance Sum [$]']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectInsuranceSum )
+	@CacheLookup
 	WebElement selectInsuranceSum;
 	
-	@FindBy(xpath = "//*[text()='Merit Rating']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectMerit )
+	@CacheLookup
 	WebElement selectMerit;
 	
-	@FindBy(xpath = "//*[text()='Damage Insurance']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectDamageIns )
+	@CacheLookup
 	WebElement selectDamageIns;
 	
-	@FindBy(xpath = "//*[@id='EuroProtection']")
+	@FindBy(xpath =ObjectRepository.optionalPrdctTxt )
+	@CacheLookup
 	WebElement optionalPrdctTxt;
 	
-	@FindBy(xpath = "//*[text()='Courtesy Car']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectCourtsey )
+	@CacheLookup
 	WebElement selectCourtsey;
 	
-	@FindBy(xpath = "//button[starts-with(@id,'nextselectpriceoption')]")
+	@FindBy(xpath =ObjectRepository.priceNxtBtn)
+	@CacheLookup
 	WebElement priceNxtBtn;
 	
-	@FindBy(xpath = "//input[@id='selectgold']")
+	@FindBy(xpath =ObjectRepository.selectGoldPlan)
+	@CacheLookup
 	WebElement selectGoldPlan;
 	
-	@FindBy(xpath = "//button[starts-with(@id,'nextsendquote')]")
+	@FindBy(xpath =ObjectRepository.clickSendQuoteBtn)
+	@CacheLookup
 	WebElement clickSendQuoteBtn;
 	
-	@FindBy(xpath = "//input[@id='email']") WebElement emailTxt;
-	@FindBy(xpath = "//input[@id='phone']") WebElement phoneTxt;
-	@FindBy(xpath = "//input[@id='username']") WebElement ussernameTxt;
-	@FindBy(xpath = "//input[@id='password']") WebElement passwordTxt;
-	@FindBy(xpath = "//input[@id='confirmpassword']") WebElement confrmPassTxt;
-	@FindBy(xpath = "//textarea[@id='Comments']") WebElement commentTxt;
+	@FindBy(xpath =ObjectRepository.emailTxt) WebElement emailTxt;
+	@CacheLookup
+	@FindBy(xpath =ObjectRepository.phoneTxt) WebElement phoneTxt;
+	@CacheLookup
+	@FindBy(xpath =ObjectRepository.ussernameTxt ) WebElement ussernameTxt;
+	@CacheLookup
+	@FindBy(xpath =ObjectRepository.passwordTxt ) WebElement passwordTxt;
+	@CacheLookup
+	@FindBy(xpath =ObjectRepository.confrmPassTxt ) WebElement confrmPassTxt;
+	@CacheLookup
+	@FindBy(xpath =ObjectRepository.commentTxt ) WebElement commentTxt;
+	
 	
 	public SendQuotePagePOM() {
 		PageFactory.initElements(driver, this);
@@ -279,28 +321,28 @@ public class SendQuotePagePOM extends Base{
 		clickSendQuoteBtn.click();
 	}
 	
-	public void enterEmail() {
-		emailTxt.sendKeys();
+	public void enterEmail(String emailValue) {
+		emailTxt.sendKeys(emailValue);
 	}
 	
-	public void enterPhone() {
-		phoneTxt.sendKeys();
+	public void enterPhone(String phoneValue) {
+		phoneTxt.sendKeys(phoneValue);
 	}
 	
-	public void enterUsername() {
-		ussernameTxt.sendKeys();
+	public void enterUsername(String userValue) {
+		ussernameTxt.sendKeys(userValue);
 	}
 	
-	public void enterPassword() {
-		passwordTxt.sendKeys();
+	public void enterPassword(String passValue) {
+		passwordTxt.sendKeys(passValue);
 	}
 	
-	public void enterConfirmPass() {
-		confrmPassTxt.sendKeys();
+	public void enterConfirmPass(String confpassValue) {
+		confrmPassTxt.sendKeys(confpassValue);
 	}
 	
-	public void enterComment() {
-		commentTxt.sendKeys();
+	public void enterComment(String commentValue) {
+		commentTxt.sendKeys(commentValue);
 	}
 
 }

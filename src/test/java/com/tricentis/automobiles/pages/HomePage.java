@@ -15,6 +15,7 @@ public class HomePage extends Base {
 	public static String expectedTitel = "Tricentis Vehicle Insurance";
 	public static String autoMobile = "Automobile";
 	public static String exptTruck = "Truck";
+	public static String actualMotorcycle = "Motorcycle";
 	public static String exptCamper = "Camper";
 
 	@Test
@@ -48,7 +49,8 @@ public class HomePage extends Base {
 
 		// Validate Motorcycle option is present or not
 
-		driver.findElement(By.xpath(prop.getProperty("motorcycleLnk")));
+		String expectedMotorcyleTxt = driver.findElement(By.xpath(prop.getProperty("motorcycleLnk"))).getText();
+		Assert.assertEquals(actualMotorcycle, expectedMotorcyleTxt);
 
 		// Validate Camper option is available or not
 

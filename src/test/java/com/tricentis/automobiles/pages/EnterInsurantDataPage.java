@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.tricentis.base.Base;
-import com.tricentis.utils.Xls_Reader;
+import com.tricentis.utilities.Xls_Reader;
 
 public class EnterInsurantDataPage extends Base {
 

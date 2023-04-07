@@ -4,58 +4,75 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.tricentis.automobiles.objectrepository.ObjectRepository;
 import com.tricentis.base.Base;
 
 public class EnterVehicleDetailPOM extends Base {
 	
-	@FindBy(xpath = "//ul[@class='menu']//child::li[1]//a[text()='Automobile']")
+	@FindBy(xpath =ObjectRepository.automobileLnk )
+	@CacheLookup
 	WebElement automobileLnk;
 
-	@FindBy(xpath = "//a[text()='Truck']")
+	@FindBy(xpath =ObjectRepository.truckLnk)
+	@CacheLookup
 	WebElement truckLnk;
 
-	@FindBy(xpath = "//a[contains(text(),'Motorcycle')]")
+	@FindBy(xpath =ObjectRepository.motorcycleLnk)
+	@CacheLookup
 	WebElement motorcycleLnk;
 
-	@FindBy(xpath = "//ul[@class='menu']//following::li[4]//a[text()='Camper']")
+	@FindBy(xpath =ObjectRepository.camperLnk )
+	@CacheLookup
 	WebElement camperLnk;
 	
-	@FindBy(xpath = "//*[@class='idealsteps-step']//select[@id='make']")
+	@FindBy(xpath =ObjectRepository.selectMake)
+	@CacheLookup
 	WebElement selectMake;
 	
-	@FindBy(xpath = "//input[@id='engineperformance']")
+	@FindBy(xpath =ObjectRepository.enginePerfmnceTxt)
+	@CacheLookup
 	WebElement enginePerfmnceTxt;
 	
-	@FindBy(xpath = "//input[@id='dateofmanufacture']")
+	@FindBy(xpath =ObjectRepository.manufactureTxt)
+	@CacheLookup
 	WebElement manufactureTxt;
 	
-	@FindBy(xpath = "//label[text()='Number of Seats']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectNumSeat)
+	@CacheLookup
 	WebElement selectNumSeat;
 	
-	@FindBy(xpath = "//label[text()='Fuel Type']//following::select[1]")
+	@FindBy(xpath =ObjectRepository.selectFuel)
+	@CacheLookup
 	WebElement selectFuel;
 	
-	@FindBy(xpath = "//label[text()='List Price [$]']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.priceTxt)
+	@CacheLookup
 	WebElement priceTxt;
 	
-	@FindBy(xpath = "//label[text()='License Plate Number']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.licenseTxt)
+	@CacheLookup
 	WebElement licenseTxt;
 	
-	@FindBy(xpath = "//label[text()='Annual Mileage [mi]']//following::input[1]")
+	@FindBy(xpath =ObjectRepository.mileageTxt)
+	@CacheLookup
 	WebElement mileageTxt;
 	
-	@FindBy(xpath = "//button[starts-with(@id,'nextenterinsurantdata')]")
+	@FindBy(xpath =ObjectRepository.vehcileNxtBtn)
+	@CacheLookup
 	WebElement vehcileNxtBtn;
 	
+	/*
 	public EnterVehicleDetailPOM() {
 		PageFactory.initElements(driver, this);
 	}
+	*/
 	
 	public String validateTitle() {
 		return driver.getTitle();
@@ -82,34 +99,40 @@ public class EnterVehicleDetailPOM extends Base {
 		return new AutomobilePage();
 	}
 	
-	public void selectMake() {
+	public void selectMake(String vMake) {
 		Select make = new Select(selectMake);
-		make.selectByVisibleText("");
+		make.selectByVisibleText(vMake);
 	}
 	
-	public void enginePerformance() {
-		 enginePerfmnceTxt.sendKeys();
+	public void enginePerformance(String engine) {
+		 enginePerfmnceTxt.sendKeys(engine);
 	}
 	
-	public void manufactureDate() {
-		manufactureTxt.sendKeys();
+	public void manufactureDate(String dmof) {
+		manufactureTxt.sendKeys(dmof);
 	}
 	
-	public void selectSeat() {
+	public void selectSeat(String numSeat) {
 		Select seat = new Select(selectNumSeat);
-		seat.selectByVisibleText("");
+		seat.selectByVisibleText(numSeat);
+	}
+	
+	public void selectFuel(String fuelType) {
+		Select fuel = new Select(selectFuel);
+		fuel.selectByVisibleText(fuelType);
+				
 	}
 
-	public void listPrice() {
-		priceTxt.sendKeys();
+	public void listPrice(String priceValue) {
+		priceTxt.sendKeys(priceValue);
 	}
 	
-	public void licensePlate() {
-		licenseTxt.sendKeys();
+	public void licensePlate(String licenseValue) {
+		licenseTxt.sendKeys(licenseValue);
 	}
 	
-	public void anualMileage() {
-		mileageTxt.sendKeys();
+	public void anualMileage(String mileageValue) {
+		mileageTxt.sendKeys(mileageValue);
 	}
 	
 	public void clickNext() {
