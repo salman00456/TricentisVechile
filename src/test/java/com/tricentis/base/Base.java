@@ -91,6 +91,8 @@ public class Base {
 			System.out.println("Please select Chrome, firefox or edge browser only");
 		}
 
+		
+				
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30l, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();

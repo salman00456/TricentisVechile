@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tricentis.Testcases.HomePageTest">
+      <class name="com.tricentis.Testcases.EnterInsurantDetail">
         <methods>
+          <include name="enterInsurantDetail"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="validateHomePageTitle"/>
-          <include name="validateHomepageLnks"/>
         </methods>
-      </class> <!-- com.tricentis.Testcases.HomePageTest -->
+      </class> <!-- com.tricentis.Testcases.EnterInsurantDetail -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
